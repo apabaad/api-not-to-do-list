@@ -1,9 +1,18 @@
 import express from 'express';
 const app = express();
+
+import morgan from 'morgan'; ///track who is making what request from what ip. if its an attack, we can block the ip
+
 const PORT = 8000;
 
+// connect to mongodb
+import mongoClient from './src/config/db.js';
+mongoClient();
+
+// middleware
 app.use(express.urlencoded());
 app.use(express.json());
+app.use(morgan('tiny'));
 
 // load modules
 import routers from './src/routers.js';
