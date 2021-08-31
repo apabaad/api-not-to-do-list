@@ -36,6 +36,14 @@ export const readTask = async () => {
 
 // get single task
 
+export const getSingleTask = async (_id) => {
+  try {
+    const result = await TaskListSchema.findById(_id);
+    return result;
+  } catch (error) {
+    return error;
+  }
+};
 // update task
 
 // delete task

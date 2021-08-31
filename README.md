@@ -13,9 +13,9 @@ This is the backend project build with Node, Express and MongoDB for React front
 
 All the api will follow the `{routerUrl}/api/v1` patterns
 
-| #   | Method   | Path | Description                                                                                              |
-| --- | -------- | ---- | -------------------------------------------------------------------------------------------------------- |
-| 1.  | `GET`    | `/`  | Return all the tasks                                                                                     |
-| 2.  | `POST`   | `/`  | Expects task object stores task in the DB and returns stored data or null if unable to store the data    |
-| 3.  | `PATCH`  | `/`  | Expects id and the instruction on what to update in the DB.                                              |
-| 4.  | `DELETE` | `/`  | Expects id and the instruction on what to delete in the DB and returns success or unsuccess information. |
+| #   | Method   | Path | Description                                                                                                       |
+| --- | -------- | ---- | ----------------------------------------------------------------------------------------------------------------- |
+| 1.  | `GET`    | `/`  | `@_id` is optional parameter, if task id is sent, it will return a single task otherwise it returns all the tasks |
+| 2.  | `POST`   | `/`  | Expects task object stores task in the DB and returns stored data or null if unable to store the data             |
+| 3.  | `PATCH`  | `/`  | Expects id and the instruction on what to update in the DB.                                                       |
+| 4.  | `DELETE` | `/`  | Expects id and the instruction on what to delete in the DB and returns success or unsuccess information.          |
