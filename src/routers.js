@@ -73,7 +73,7 @@ router.patch('/', async (req, res) => {
 router.delete('/', async (req, res) => {
   console.log(req.body);
 
-  const result = await deleteTasks(req.body);
+  const result = await deleteTasks(req.body.ids);
   console.log(result);
 
   if (result?.deletedCount > 0) {

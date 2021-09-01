@@ -21,14 +21,14 @@ PATCH  http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "_id": "612ecbbb2a1e6889fdeb4e0f",
-    "todo": true
+    "id": "612ecbbb2a1e6889fdeb4e0f",
+    "todo": false
 }
 ### delete ticket
 DELETE http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "_id": "612ec2f58594e9be73ba9bd4"
+    "ids": ["612ecf6efaad05e9f282f1a5"]
     
 }

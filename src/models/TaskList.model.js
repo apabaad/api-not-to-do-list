@@ -63,11 +63,26 @@ export const updateTask = async ({ id, todo }) => {
   }
 };
 
-// delete task
+// delete one task
+// export const deleteTasks = async (ids) => {
+//   console.log(ids);
+//   try {
+//     const result = await TaskListSchema.deleteOne(ids);
+//     return result;
+//   } catch (error) {
+//     console.log(error);
+//     return false;
+//   }
+// };
+
+// delete many
 export const deleteTasks = async (ids) => {
-  console.log(ids);
   try {
-    const result = await TaskListSchema.deleteOne(ids);
+    const result = await TaskListSchema.deleteMany({
+      _id: {
+        $in: ids, //in operater will check all the ids in _id in our table
+      },
+    });
     return result;
   } catch (error) {
     console.log(error);
