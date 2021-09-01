@@ -2,7 +2,11 @@ import express from 'express';
 const router = express.Router();
 
 import { insertTask } from './models/TaskList.model.js';
-import { readTask, getSingleTask } from './models/TaskList.model.js';
+import {
+  readTask,
+  getSingleTask,
+  deleteTasks,
+} from './models/TaskList.model.js';
 
 router.all('/', (req, res, next) => {
   console.log('gor hit');
@@ -51,6 +55,23 @@ router.patch('/', (req, res) => {
   });
 });
 
-router.delete('/', () => {});
+// delete
+router.delete('/', async (req, res) => {
+  console.log(req.body);
+
+  const result = await deleteTasks(req.body);
+  console.log(result);
+
+  if (result?.deletedCount > 0) {
+    return res.json({
+      status: 'success',
+      message: 'from delete',
+    });
+  }
+  res.json({
+    status: 'error',
+    message: 'ünable to delete',
+  });
+});
 
 export default router;

@@ -14,9 +14,9 @@ Content-Type: application/json
 {
     "task": "hello",
     "hr": 5
-}
+} 
 
-### delete ticket
+### update ticket
 PATCH  http://localhost:8000/api/v1/
 Content-Type: application/json
 
@@ -29,6 +29,6 @@ DELETE http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "_id": "hello@hi.com"
+    "_id": "612d7a23d5985482f1c8db4c"
     
 }

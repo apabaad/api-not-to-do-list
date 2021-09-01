@@ -13,6 +13,11 @@ const TaskListSchema = mongoose.Schema(
       required: true,
       default: 0,
     },
+    todo: {
+      type: String,
+      required: true,
+      default: '',
+    },
   },
   {
     timestamps: true,

@@ -47,3 +47,13 @@ export const getSingleTask = async (_id) => {
 // update task
 
 // delete task
+export const deleteTasks = async (ids) => {
+  console.log(ids);
+  try {
+    const result = await TaskListSchema.deleteOne(ids);
+    return result;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
