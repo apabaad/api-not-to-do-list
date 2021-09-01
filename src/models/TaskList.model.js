@@ -45,6 +45,23 @@ export const getSingleTask = async (_id) => {
   }
 };
 // update task
+export const updateTask = async ({ id, todo }) => {
+  try {
+    const result = await TaskListSchema.findByIdAndUpdate(
+      id,
+      {
+        todo,
+      },
+      {
+        new: true, //to get the recently updated data
+      }
+    );
+    return result;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
 
 // delete task
 export const deleteTasks = async (ids) => {

@@ -6,6 +6,7 @@ import {
   readTask,
   getSingleTask,
   deleteTasks,
+  updateTask,
 } from './models/TaskList.model.js';
 
 router.all('/', (req, res, next) => {
@@ -49,9 +50,22 @@ router.post('/', async (req, res) => {
   });
 });
 
-router.patch('/', (req, res) => {
+router.patch('/', async (req, res) => {
+  console.log(req.body);
+  const result = await updateTask(req.body);
+  console.log(result);
+
+  if (result?._id) {
+    return res.json({
+      status: 'success',
+      message: 'task updated',
+      result,
+    });
+  }
+
   res.json({
-    message: 'return from patch',
+    status: 'error',
+    message: 'unable to update',
   });
 });
 

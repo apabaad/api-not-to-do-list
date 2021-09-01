@@ -14,9 +14,9 @@ const TaskListSchema = mongoose.Schema(
       default: 0,
     },
     todo: {
-      type: String,
+      type: Boolean,
       required: true,
-      default: '',
+      default: true,
     },
   },
   {

@@ -21,7 +21,7 @@ PATCH  http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "_id": "hello@hi.com",
+    "_id": "612ecbbb2a1e6889fdeb4e0f",
     "todo": true
 }
 ### delete ticket
@@ -29,6 +29,6 @@ DELETE http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "_id": "612d7a23d5985482f1c8db4c"
+    "_id": "612ec2f58594e9be73ba9bd4"
     
 }
