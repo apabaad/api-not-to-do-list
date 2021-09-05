@@ -1,18 +1,21 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const mongoClient = async () => {
-  try {
-    console.log('connecting mongodb..');
+	try {
+		console.log("connecting mongodb ....");
 
-    const mongoUrl = 'mongodb://localhost:27017/a_task_list';
-    const con = await mongoose.connect(mongoUrl);
+		const mongoUrl = "mongodb://localhost:27017/a_task_list";
+		const con = await mongoose.connect(mongoUrl, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		});
 
-    if (con) {
-      console.log('connected mongodb');
-    }
-  } catch (error) {
-    console.log(error);
-  }
+		if (con) {
+			console.log("mongodb connected");
+		}
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 export default mongoClient;

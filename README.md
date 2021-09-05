@@ -1,21 +1,21 @@
 # Not to do task list api
 
-This is the backend project build with Node, Express and MongoDB for React frontend application
+This the backend project build with Node, Express and MongoDB for our React frontend application.
 
-# How to run
+## How to run
 
 - clone the project
 - run `npm install`
 - run `npm start`
-- make sure your system has nodemon prior to running this application. If you don't, run `npm i -g nodemon`
+- Make sure your system has nodemon prior to running this application, If you don't then run `npm i -g nodemon`
 
-# APIs
+## APIs
 
-All the api will follow the `{routerUrl}/api/v1` patterns
+All the api will follow the `{rootUrl}/api/v1/` patterns
 
-| #   | Method   | Path | Description                                                                                                       |
-| --- | -------- | ---- | ----------------------------------------------------------------------------------------------------------------- |
-| 1.  | `GET`    | `/`  | `@_id` is optional parameter, if task id is sent, it will return a single task otherwise it returns all the tasks |
-| 2.  | `POST`   | `/`  | Expects task object stores task in the DB and returns stored data or null if unable to store the data             |
-| 3.  | `PATCH`  | `/`  | Expects id and the instruction on what to update in the DB.                                                       |
-| 4.  | `DELETE` | `/`  | Expects id and the instruction on what to delete in the DB and returns success or unsuccess information.          |
+| #   | Method   | Path   | Description                                                                                                          |
+| --- | -------- | ------ | -------------------------------------------------------------------------------------------------------------------- |
+| 1.  | `GET`    | `/_id` | `@_id` is optional parameter, if task id is sent, it will return a single task otherwise it will return all the task |
+| 2.  | `POST`   | `/`    | Expects task object stores tas in the database and return the stored data or null if unable to store the data        |
+| 3.  | `PATCH`  | `/`    | Expects id and the instruction on what to update in the database                                                     |
+| 4.  | `DELETE` | `/`    | Expects id and deletes data from the database and returns success or unsuccess information                           |

@@ -1,34 +1,36 @@
-# API list for not to do app
+# API list not to do app
 
-### Fetch all tickets
-GET http://localhost:8000/api/v1
+### Fetch all tasks
+GET http://localhost:8000/api/v1/
+ 
 
-### fetch single ticket
-
-GET http://localhost:8000/api/v1/612d7a23d5985482f1c8db4c
-
-### create new ticket
+### create new tasks
 POST http://localhost:8000/api/v1/
 Content-Type: application/json
 
-{
-    "task": "hello",
-    "hr": 5
-} 
+{ 
+  "task": "Coding Js",
+  "hr": 100
+}
 
-### update ticket
+
+### update tasks
 PATCH  http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "id": "612ecbbb2a1e6889fdeb4e0f",
-    "todo": false
+"id": "612d7458aaf927067c2ba49a",
+"todo": true
 }
-### delete ticket
-DELETE http://localhost:8000/api/v1/
+
+
+### Delete tasks
+DELETE  http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "ids": ["612ecf6efaad05e9f282f1a5"]
-    
+"ids": [
+  "612d825769ecb0d7623be6a4"
+]  
 }
+
